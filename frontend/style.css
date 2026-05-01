@@ -1,0 +1,103 @@
+/* ==========================================================================
+   style.css - Linux Command Generator Custom Styles (Frontend Architect setup)
+   ========================================================================== */
+
+/* 1. Reset & Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 211, 153, 0.4); /* Tailwind Emerald-400 */
+    border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+/* 2. Floating Label Effect cho Input Auth */
+/* Việc translate Y được xử lý bởi class Tailwind 'peer' trong HTML,
+   nhưng phần glow/shadow custom sẽ định nghĩa ở đây để tái sử dụng. */
+.floating-input {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-input:focus-within input {
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.1), inset 0 0 5px rgba(52, 211, 153, 0.05);
+}
+
+/* 3. History Item Effects */
+.history-item {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.08); /* Sáng nhẹ lên */
+    border-color: rgba(52, 211, 153, 0.2); /* Viền Emerald mờ */
+    transform: translateX(4px); /* Trượt nhẹ sang phải */
+    box-shadow: -4px 0 15px rgba(16, 185, 129, 0.05);
+}
+
+/* 4. Glow Focus Within cho Input Gen */
+.glow-focus-within:focus-within {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.1), inset 0 0 10px rgba(16, 185, 129, 0.02);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+/* 5. Terminal Typing Effect (Blinking Cursor) */
+.typing-effect {
+    position: relative;
+    display: inline;
+}
+
+.typing-effect::after {
+    content: '▋';
+    display: inline-block;
+    color: #34d399; /* Emerald 400 */
+    animation: blink 1.2s step-start infinite;
+    margin-left: 4px;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* 6. Base Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 7. Toast Notifcations Animations System */
+@keyframes toastSlideIn {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toastFadeOut {
+    0% { transform: translateX(0); opacity: 1; max-height: 100px; padding: 12px 16px; margin-bottom: 12px; }
+    100% { transform: translateX(100%); opacity: 0; max-height: 0; padding: 0; margin-bottom: 0; border: none; }
+}
+
+.toast-enter {
+    animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-exit {
+    animation: toastFadeOut 0.4s cubic-bezier(0.5, 0, 0, 1) forwards;
+}

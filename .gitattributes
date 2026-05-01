@@ -1,0 +1,40 @@
+# .gitattributes — Cross-platform line ending normalization
+# ─────────────────────────────────────────────────────────────────────────────
+# Đảm bảo Git tự động chuyển đổi line endings:
+#   - Khi commit   → luôn lưu dạng LF (Unix-style)
+#   - Khi checkout → Windows nhận CRLF, Linux/macOS nhận LF
+#
+# Nhờ vậy, code mang từ Windows sang Linux sẽ không bị lỗi cú pháp lạ
+# do sự khác biệt giữa CRLF và LF.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Default: auto-detect text files and normalize to LF in the repo
+* text=auto eol=lf
+
+# Explicitly declare text files to always use LF
+*.py    text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.env   text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf
+*.cfg   text eol=lf
+*.ini   text eol=lf
+*.toml  text eol=lf
+
+# Binary files — never touch line endings
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.whl   binary

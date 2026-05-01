@@ -1,0 +1,95 @@
+# ============================================================
+# SECRETS & CREDENTIALS (NEVER commit these)
+# ============================================================
+.env
+.env.*
+*.env
+firebase-credentials.json
+firebase-adminsdk*.json
+service-account*.json
+*-service-account.json
+google-credentials.json
+
+# ============================================================
+# PYTHON
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+MANIFEST
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Pytest
+.pytest_cache/
+.cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================
+# NODE / FRONTEND
+# ============================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.yarn
+
+# ============================================================
+# IDE & EDITORS
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# LOGS & TEMP FILES
+# ============================================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ============================================================
+# UVICORN / FASTAPI
+# ============================================================
+*.pid

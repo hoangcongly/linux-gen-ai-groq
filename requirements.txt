@@ -1,0 +1,38 @@
+# ============================================================
+# Backend Dependencies — Linux Command Generator
+# ============================================================
+# Cross-platform compatible: all packages below have pre-built
+# binary wheels on PyPI for both Windows (x64) and Linux (x64/arm64).
+# No C compiler or platform-specific tools required.
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# NOTE: pydantic-core and grpcio are compiled extensions that ship
+# official wheels for the most common platforms. If you use an
+# uncommon CPU/OS combo, add --only-binary=:all: to pip install.
+# ============================================================
+
+# ── Web Framework ─────────────────────────────────────────────────────────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# ── Firebase Admin SDK ────────────────────────────────────────────────────────
+# Ships pre-built grpcio wheels; no local compilation needed for Win/Linux x64.
+firebase-admin>=6.5.0
+
+# ── OpenAI ChatGPT ────────────────────────────────────────────────────────────
+openai>=1.0.0
+
+# ── Environment variable management ──────────────────────────────────────────
+# python-dotenv is pure Python — works identically on all platforms.
+python-dotenv>=1.0.1
+
+# ── Data validation ────────────────────────────────────────────────────────────
+# pydantic-core (Rust extension) has official wheels for Win/Linux/macOS.
+pydantic>=2.9.0
+
+# ── HTTP client ────────────────────────────────────────────────────────────────
+# httpx is pure Python; no platform-specific compilation required.
+httpx>=0.27.0
+

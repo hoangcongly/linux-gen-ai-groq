@@ -80,11 +80,14 @@ async def generate_and_save_command(uid: str, prompt: str) -> dict:
 
     except Exception as exc:
         print(f"[command_svc] Firestore write error: {exc}")
+        import traceback
+        traceback.print_exc()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Không thể lưu lệnh vào cơ sở dữ liệu. Vui lòng thử lại.",
         )
 
+    print(f"[command_svc] Đã lưu command thành công vào DB. ID: {document_id}")
     # ── Step 4: Return the persisted document ────────────────────────────
     return {
         "id": document_id,

@@ -6,7 +6,7 @@
 - **Môn học:** Tư duy tính toán (Bài thực hành số 2)
 - **Họ và tên sinh viên:** Hoàng Công Lý
 - **MSSV:** 24120378
-- **Video Demo:** 
+- **Video Demo:** https://drive.google.com/file/d/12j6pv5gpvZakfqnPMW_PX9hYe5agVNIe/view?usp=sharing
 
 ---
 
